@@ -1,5 +1,6 @@
 package dev.sideproject.momo.dto;
 
+import dev.sideproject.momo.domain.post.PostEntity;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -22,8 +23,7 @@ public class CommentDto {
 
     private Instant createAt;
     private Long userId;
-    private Long postId;
-
+    private PostDto postDto;
 
 
 }

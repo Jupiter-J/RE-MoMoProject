@@ -28,10 +28,16 @@
 
 ### 2022-05-15 진행상황
 * 댓글 기능 구현 
-* Json 형식이 보기 힘든 형태라 수정 필요 
+* Json 응답 형식이 보기 힘든 형태라 2차 배열로 수정 필요 
  
 
-  <img width="944" alt="image" src="https://user-images.githubusercontent.com/73453283/168473748-b8ac1f4b-bc79-4152-bf45-1e8138288b01.png">
+  <img width="900" alt="image" src="https://user-images.githubusercontent.com/73453283/168473748-b8ac1f4b-bc79-4152-bf45-1e8138288b01.png">
+
+### 2022-05-16 진행상황
+* 댓글 기능 JSON 응답 형식 2차 배열로 수정 [상세정보](https://velog.io/@jupiter-j/Json-2%EC%B0%A8%EB%B0%B0%EC%97%B4-%EC%97%90%EB%9F%AC)
+
+
+![](https://velog.velcdn.com/images/jupiter-j/post/0821e3c8-efb1-4a18-849c-1669403ab7cf/image.png)
 
 <br>
 <br>

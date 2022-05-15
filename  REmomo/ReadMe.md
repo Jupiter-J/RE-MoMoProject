@@ -26,6 +26,21 @@
 ### 2022-05-14 진행상황
 * 댓글기능 구현을 위한 JPA 학습 
 
+### 2022-05-15 진행상황
+* 댓글 기능 구현 
+* Json 형식이 보기 힘든 형태라 수정 필요 
+ 
+
+  <img width="944" alt="image" src="https://user-images.githubusercontent.com/73453283/168473748-b8ac1f4b-bc79-4152-bf45-1e8138288b01.png">
+
+<br>
+<br>
+
+## ERD
+![image](https://user-images.githubusercontent.com/73453283/168473678-8d5c5614-436f-4755-ab55-42fed93820e2.png)
+
+
+
 
 <br>
 <br>

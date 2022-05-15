@@ -33,6 +33,7 @@ public class PostEntity extends BaseEntity {
     @JoinColumn(name = "topic_id")
     private TopicEntity topicEntity;
 
+
     //user
     @ManyToOne(
             fetch = FetchType.LAZY,

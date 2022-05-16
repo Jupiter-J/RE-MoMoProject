@@ -18,7 +18,8 @@
 
 ---
 
-목차 
+## 개발일지
+
 ### 2022-05-02 진행상황
 * 롬복(Lombok)으로 수정
 * Topic Entity 수정
@@ -45,8 +46,16 @@
 <br>
 <br>
 
+--- 
+
+
 ## ERD
 ![image](https://user-images.githubusercontent.com/73453283/168473678-8d5c5614-436f-4755-ab55-42fed93820e2.png)
+
+## Swagger
+* 댓글 CRUD 추가 
+
+![image](https://user-images.githubusercontent.com/73453283/168506290-c3f7cfb1-d154-42a0-beec-b1eec8587aa7.png)
 
 
 

@@ -2,9 +2,9 @@
 
 # MOMO RE_Project
 
-### 제작했던 프로젝트의 코드를 개선 및 수정합니다
+### 제작했던 I'm MoMo 프로젝트의 코드를 개선 및 수정합니다
 ## Iam MOMO project
-### [👏 프로젝트로 가기](https://github.com/Jupiter-J/iammomoproject.git)
+### [👏 본 프로젝트로 가기](https://github.com/Jupiter-J/iammomoproject.git)
 
 - 본격 '일상 공감' 프로젝트입니다.
 - 모든 글은 '모모'라는 닉네임을 사용하며 가벼운 일상에서 부터 진솔한 감정까지 다양한 이야기로 서로의 삶을 공유하는 서비스입니다.

@@ -17,7 +17,7 @@ public class TopicDto {
     @ApiModelProperty(value = "고유 id")
     private Long id;
 
-    @ApiModelProperty(value = "질문" , example = "오늘 기분이 어때")
+    @ApiModelProperty(value = "질문" , example = "topic(질문): 기분이 어떤가요?")
     private String title;
 
     @ApiModelProperty(value = "생성시간")

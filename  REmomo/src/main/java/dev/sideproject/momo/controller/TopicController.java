@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Collection;
 
 @RestController
-@RequestMapping("api/topic")
+@RequestMapping("api/v1/topic")
 public class TopicController {
 
     private final TopicService topicService;

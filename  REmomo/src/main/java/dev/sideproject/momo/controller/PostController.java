@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Collection;
 
 @RestController
-@RequestMapping("api/topic/{topicId}/post")
+@RequestMapping("api/v1/topic/{topicId}/post")
 public class PostController {
 
     private final PostService postService;

@@ -17,13 +17,13 @@ public class PostDto {
     @ApiModelProperty(value = "고유 id")
     private Long id;
 
-    @ApiModelProperty(value = "질문답변" , example = "오늘은 좋았어요")
+    @ApiModelProperty(value = "질문답변" , example = "Post(게시글): 오늘은 좋았어요")
     private String content;
 
     private Long userId;
     private Long topicId;
 
-    @ApiModelProperty(value = "질문" , example = "기분이 어떤가요?")
+    @ApiModelProperty(value = "질문" , example = "topic(질문): 기분이 어떤가요?")
     private String topicTitle;  //토픽으로 가져옴
     private Instant createAt;
 //    private Instant updateAt;

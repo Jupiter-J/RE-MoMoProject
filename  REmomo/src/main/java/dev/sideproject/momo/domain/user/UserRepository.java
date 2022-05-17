@@ -19,3 +19,7 @@ public interface UserRepository extends CrudRepository <UserEntity, Long> {
 
 
 }
+
+
+//클래스가 상속받기 위해서는 interface imple (겍체 상속받을때는 impl)
+//같은 인터페이스 끼리는 extends (같은애들)

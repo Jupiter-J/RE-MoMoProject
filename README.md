@@ -43,6 +43,16 @@
 
 ![](https://velog.velcdn.com/images/jupiter-j/post/0821e3c8-efb1-4a18-849c-1669403ab7cf/image.png)
 
+### 2022-05-25 진행상황
+* JWT 방식의 로그인 파일 추가 생성
+* CORS에러 
+
+### 2022-06-02 진행상황
+* JWT 로그인 방식을 이메일 방식으로 부분 변경
+* CORS에러 해결
+
+
+
 <br>
 <br>
 

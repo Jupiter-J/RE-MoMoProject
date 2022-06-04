@@ -51,6 +51,8 @@
 * JWT 로그인 방식을 이메일 방식으로 부분 변경
 * CORS에러 해결
 
+### 2022-06-04 진행상황 
+* 로그인시 401 Unauthorize 에러 해결 [상세정보](https://velog.io/@jupiter-j/SpringSecurity-JWT-로그인시-401-에러)
 
 
 <br>

@@ -58,8 +58,8 @@ public class JpaPostService implements PostService{
     public PostDto read(Long topicId, Long postId) {
         if (!this.postRepository.existsById(postId))
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
-
         PostEntity postEntity = this.postRepository.findById(postId).get();
+
         if (!postEntity.getTopicEntity().getTid().equals(topicId))
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
 

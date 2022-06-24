@@ -1,18 +1,17 @@
 package com.example.momo.domain.category;
 
+import com.example.momo.domain.BaseEntity;
 import lombok.Builder;
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
 @Entity
 @Data
+@Table(name = "CategoryEntity")
 public class CategoryEntity {
 
     @Id

@@ -140,6 +140,8 @@ public class JpaCommentService implements CommentService{
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
         this.commentRepository.deleteById(commentId);
 
+
+
         return true;
     }
 

@@ -31,7 +31,7 @@ public class QuestionController {
             return ResponseEntity.ok(questionDtoList);
     }
 
-    @GetMapping("{categoryId}/questions/{questionId}")
+    @GetMapping("{questionId}")
     public ResponseEntity<QuestionDto> readQuestion(@PathVariable("categoryId")Long category_id,
                                                     @PathVariable("questionId")Long questionId){
         QuestionDto questionDto = this.questionServiceJpa.readQuestion(category_id, questionId);
@@ -41,7 +41,7 @@ public class QuestionController {
             return ResponseEntity.ok(questionDto);
     }
 
-    @PutMapping("{categoryId}/questions/{questionId}")
+    @PutMapping("{questionId}")
     public ResponseEntity<?> updateQuestion(@PathVariable("categoryId") Long category_id,
                                             @PathVariable("questionId") Long questionId,
                                             @RequestBody QuestionDto dto){
@@ -52,7 +52,15 @@ public class QuestionController {
 
     }
 
-   // @DeleteMapping("{categoryId}/questions/{questionId}")
+    @DeleteMapping("{questionId}")
+    public ResponseEntity<?> deleteQuestion(@PathVariable("categoryId") Long category_id,
+                                            @PathVariable("questionId") Long questionId){
+
+        if (!questionServiceJpa.deleteQuestion(category_id, questionId))
+            return ResponseEntity.notFound().build();
+        return ResponseEntity.noContent().build();
+    }
+
 
 
 }

@@ -1,5 +1,7 @@
 package com.example.momo.service;
 
+import com.example.momo.domain.question.QuestionEntity;
+import com.example.momo.domain.question.QuestionSearch;
 import com.example.momo.dto.category.CategoryDto;
 import com.example.momo.dto.question.QuestionDto;
 
@@ -12,6 +14,9 @@ public interface QuestionService {
     QuestionDto readQuestion(Long categoryId, Long questionId);
     boolean updateQuestion(Long categoryId, Long questionId,QuestionDto dto);
     boolean deleteQuestion(Long categoryId, Long questionId);
+
+    Collection<QuestionSearch>searchQuestion(String keyword);
+    Collection<QuestionSearch>findByQuestionContaining(String text);
 
 
 

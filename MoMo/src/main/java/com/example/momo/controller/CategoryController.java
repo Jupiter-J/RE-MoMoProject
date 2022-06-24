@@ -22,6 +22,7 @@ public class CategoryController {
 
     @PostMapping
     public ResponseEntity<CategoryDto> createCategory(@RequestBody CategoryDto dto){
+        //파라미터로 받는다 -> valid 어노테이션 검색
         return ResponseEntity.ok(categoryServiceJpa.createCategory(dto));
     }
 

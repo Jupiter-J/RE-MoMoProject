@@ -31,11 +31,6 @@
 ### 2022-05-15 진행상황
 * 댓글 기능 CRUD 구현 
 * Json 응답 형식이 보기 힘든 형태라 2차 배열로 수정 필요 
- 
-
-  <img width="900" alt="image" src="https://user-images.githubusercontent.com/73453283/168473748-b8ac1f4b-bc79-4152-bf45-1e8138288b01.png">
-
-<br>
 
 ### 2022-05-16 진행상황
 * 댓글 기능 JSON 응답 형식 2차 배열로 수정 [상세정보](https://velog.io/@jupiter-j/Json-2%EC%B0%A8%EB%B0%B0%EC%97%B4-%EC%97%90%EB%9F%AC)
@@ -54,6 +49,23 @@
 ### 2022-06-04 진행상황 
 * 로그인시 401 Unauthorize 에러 해결 [상세정보](https://velog.io/@jupiter-j/SpringSecurity-JWT-로그인시-401-에러)
 
+### 2022-06-10 진행상황
+#### ⚠️ 프로젝트를 다시 구현하기로함
+기획자님의 요구사항이 증가하면서 전체적인 설계와 ERD설계의 필요성을 느끼게 되었다
+* 이벤트 스토밍 1차 [상세정보](https://velog.io/@jupiter-j/프로젝트-설계-이벤트-스토밍) 
+
+### 2022-06-11 진행상황
+* 이벤트 스토밍 2차 [상세정보](https://velog.io/@jupiter-j/프로젝트-설계-이벤트스토밍2)
+
+### 2022-06-16 진행상황
+* ERD설계 및 기능명세서 정리 [상세정보](https://velog.io/@jupiter-j/프로젝트-설계-이벤트스토밍3)
+
+### 2022-06-23 진행상황
+* 카테고리 CRUD 완료
+
+### 2022-06-24 진행상황
+* 질문 CRUD + 질문검색 완료
+* 질문검색 네이티브쿼리와 메소드 쿼리 에러 해결 [상세정보](https://velog.io/@jupiter-j/에러Jpa-검색기능-like-사용시nativeQuery와-메소드-사용)
 
 <br>
 <br>
@@ -62,12 +74,7 @@
 
 
 ## ERD
-![image](https://user-images.githubusercontent.com/73453283/168473678-8d5c5614-436f-4755-ab55-42fed93820e2.png)
-
-## Swagger
-* 댓글 CRUD 추가 
-
-![image](https://user-images.githubusercontent.com/73453283/168506290-c3f7cfb1-d154-42a0-beec-b1eec8587aa7.png)
+![](https://velog.velcdn.com/images/jupiter-j/post/e90fc64f-2199-4bb9-a976-d0315df11881/image.png)
 
 
 

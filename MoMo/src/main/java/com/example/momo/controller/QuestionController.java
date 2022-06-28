@@ -1,6 +1,7 @@
 package com.example.momo.controller;
 
 import com.example.momo.dto.question.QuestionDto;
+import com.example.momo.dto.response.BaseResponse;
 import com.example.momo.service.QuestionService;
 import com.example.momo.service.QuestionServiceJpa;
 import lombok.RequiredArgsConstructor;
@@ -16,44 +17,43 @@ public class QuestionController {
     private final QuestionServiceJpa questionServiceJpa;
 
     @PostMapping()
-    public ResponseEntity<QuestionDto> createQuestion(@PathVariable("categoryId") Long category_id,
-                                                      @RequestBody QuestionDto dto){
+    public ResponseEntity<BaseResponse<QuestionDto>> createQuestion(@PathVariable("categoryId") Long category_id,
+                                                                   @RequestBody QuestionDto dto){
         QuestionDto result = this.questionServiceJpa.createQuestion(category_id, dto);
-        return ResponseEntity.ok(result);
+        return ResponseEntity.ok(BaseResponse.success(result));
     }
 
     @GetMapping()
-    public ResponseEntity<Collection<QuestionDto>> readAllQuestion(@PathVariable("categoryId")Long category_id){
+    public ResponseEntity<BaseResponse<Collection<QuestionDto>>> readAllQuestion(@PathVariable("categoryId")Long category_id){
        Collection<QuestionDto> questionDtoList = this.questionServiceJpa.readAllQuestion(category_id);
         if (questionDtoList == null)
             return ResponseEntity.notFound().build();
         else
-            return ResponseEntity.ok(questionDtoList);
+            return ResponseEntity.ok(BaseResponse.success(questionDtoList));
     }
 
     @GetMapping("{questionId}")
-    public ResponseEntity<QuestionDto> readQuestion(@PathVariable("categoryId")Long category_id,
+    public ResponseEntity<BaseResponse<QuestionDto>> readQuestion(@PathVariable("categoryId")Long category_id,
                                                     @PathVariable("questionId")Long questionId){
         QuestionDto questionDto = this.questionServiceJpa.readQuestion(category_id, questionId);
         if (questionDto == null)
             return ResponseEntity.notFound().build();
         else
-            return ResponseEntity.ok(questionDto);
+            return ResponseEntity.ok(BaseResponse.success(questionDto));
     }
 
     @PutMapping("{questionId}")
-    public ResponseEntity<?> updateQuestion(@PathVariable("categoryId") Long category_id,
+    public ResponseEntity<BaseResponse<?>> updateQuestion(@PathVariable("categoryId") Long category_id,
                                             @PathVariable("questionId") Long questionId,
                                             @RequestBody QuestionDto dto){
 
         if (!questionServiceJpa.updateQuestion(category_id, questionId, dto))
             return ResponseEntity.notFound().build();
         return ResponseEntity.noContent().build();
-
     }
 
     @DeleteMapping("{questionId}")
-    public ResponseEntity<?> deleteQuestion(@PathVariable("categoryId") Long category_id,
+    public ResponseEntity<BaseResponse<?>> deleteQuestion(@PathVariable("categoryId") Long category_id,
                                             @PathVariable("questionId") Long questionId){
 
         if (!questionServiceJpa.deleteQuestion(category_id, questionId))

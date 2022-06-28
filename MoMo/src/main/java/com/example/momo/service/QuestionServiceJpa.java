@@ -7,6 +7,8 @@ import com.example.momo.domain.question.QuestionRepository;
 import com.example.momo.domain.question.QuestionSearch;
 import com.example.momo.dto.category.CategoryDto;
 import com.example.momo.dto.question.QuestionDto;
+import com.example.momo.dto.response.ErrorCode;
+import com.example.momo.exception.NotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,7 +16,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import javax.swing.text.html.Option;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -32,7 +33,7 @@ public class QuestionServiceJpa implements QuestionService{
     public QuestionDto createQuestion(Long categoryId, QuestionDto dto) {
         //각각 레파지토리에 있는지 확인
         if (!categoryRepository.existsById(categoryId))
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+            throw new NotFoundException(ErrorCode.NOT_FOUND_CATEGORY_EXCEPTION);
 
         //값을 찾아서 저장한다
         CategoryEntity categoryEntity = this.categoryRepository.findById(categoryId).get();
@@ -95,10 +96,10 @@ public class QuestionServiceJpa implements QuestionService{
 
         //들어온값 확인하기
         if (!this.categoryRepository.existsById(categoryId))
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+            throw new NotFoundException(ErrorCode.NOT_FOUND_CATEGORY_EXCEPTION);
 
         if (!this.questionRepository.existsById(questionId))
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+            throw new NotFoundException(ErrorCode.NOT_FOUND_QUESTION_EXCEPTION);
         QuestionEntity questionEntity = this.questionRepository.findById(questionId).get();
 
         CategoryEntity categoryEntity =  this.categoryRepository.findById(categoryId).get();
@@ -121,12 +122,12 @@ public class QuestionServiceJpa implements QuestionService{
 
         //카테고리 유무확인
         if (!categoryRepository.existsById(categoryId))
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+            throw new NotFoundException(ErrorCode.NOT_FOUND_CATEGORY_EXCEPTION);
 
-        //카테고리 번호 확인
+        //질문 번호 확인
         QuestionEntity questionEntity = this.questionRepository.findById(questionId).get();
         if (!questionEntity.getCategoryEntity().getCategoryId().equals(categoryId))
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
+            throw new NotFoundException(ErrorCode.NOT_FOUND_QUESTION_EXCEPTION);
 
         //본론
         questionEntity.setQuestion(
@@ -134,21 +135,19 @@ public class QuestionServiceJpa implements QuestionService{
 
         //저장
         this.questionRepository.save(questionEntity);
-
-
         return true;
     }
 
     @Override
     public boolean deleteQuestion(Long categoryId, Long questionId) {
         if (!this.categoryRepository.existsById(categoryId))
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+            throw new NotFoundException(ErrorCode.NOT_FOUND_CATEGORY_EXCEPTION);
 
         QuestionEntity questionEntity = this.questionRepository.findById(questionId).get();
         if (!this.questionRepository.existsById(questionId))
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+            throw new NotFoundException(ErrorCode.NOT_FOUND_QUESTION_EXCEPTION);
         if (!questionEntity.getCategoryEntity().getCategoryId().equals(categoryId))
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
+            throw new NotFoundException(ErrorCode.MISS_INPUT_CATEGORY_ID);
 
         this.questionRepository.deleteById(questionId);
         return true;

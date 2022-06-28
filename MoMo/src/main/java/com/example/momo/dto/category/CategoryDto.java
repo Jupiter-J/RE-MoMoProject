@@ -18,8 +18,6 @@ import javax.validation.constraints.Size;
 public class CategoryDto {
 
     private Long categoryId;
-    @NotEmpty(message = "공백이 안됩니다")
-    @Max(value = 20, message = "20글자 이하만 가능")
     private String category;
 
 

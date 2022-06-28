@@ -3,6 +3,8 @@ package com.example.momo.service;
 import com.example.momo.domain.category.CategoryEntity;
 import com.example.momo.domain.category.CategoryRepository;
 import com.example.momo.dto.category.CategoryDto;
+import com.example.momo.dto.response.ErrorCode;
+import com.example.momo.exception.NotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -52,7 +54,7 @@ public class CategoryServiceJpa implements CategoryService{
     public CategoryDto readCategory(Long categoryId) {
         Optional<CategoryEntity> categoryEntityOptional = this.categoryRepository.findById(categoryId);
         if (categoryEntityOptional.isEmpty())
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+            throw new NotFoundException(ErrorCode.NOT_FOUND_CATEGORY_EXCEPTION);
         CategoryEntity categoryEntity = categoryEntityOptional.get();
 
         return new CategoryDto(
@@ -66,7 +68,7 @@ public class CategoryServiceJpa implements CategoryService{
         Optional<CategoryEntity> categoryEntityOptional = this.categoryRepository.findById(categoryId);
 
         if (categoryEntityOptional.isEmpty())
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+            throw new NotFoundException(ErrorCode.NOT_FOUND_CATEGORY_EXCEPTION);
         CategoryEntity categoryEntity = categoryEntityOptional.get();
         categoryEntity.setCategory(dto.getCategory());
 
@@ -78,7 +80,7 @@ public class CategoryServiceJpa implements CategoryService{
     public boolean deleteCategory(Long categoryId) {
         Optional<CategoryEntity> categoryEntityOptional = this.categoryRepository.findById(categoryId);
         if (categoryEntityOptional.isEmpty())
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+            throw new NotFoundException(ErrorCode.NOT_FOUND_CATEGORY_EXCEPTION);
         CategoryEntity categoryEntity = categoryEntityOptional.get();
         this.categoryRepository.delete(categoryEntity);
 

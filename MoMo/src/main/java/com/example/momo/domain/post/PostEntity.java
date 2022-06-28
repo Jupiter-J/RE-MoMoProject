@@ -14,7 +14,6 @@ public class PostEntity {
 
     @Id
     private Long post_id;
-
     private String content;
 
 
